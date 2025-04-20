@@ -23,7 +23,7 @@ public class WeatherApiClient implements IWeatherApiClient {
   @Override
   public ExternalCurrentResponseDTO getCurrent(String query) {
     return externalWeatherApiClient.get()
-        .uri("/current.json/q={query}&key={key}", query, applicationProperties.getApiKey())
+        .uri("/current.json?q={query}&key={key}&aqi=no", query, applicationProperties.getApiKey())
         .retrieve()
         .bodyToMono(ExternalCurrentResponseDTO.class)
         .block();

@@ -13,7 +13,7 @@ public class ExternalCurrentDTO {
   private Double wind_mph;
   private Double wind_kph;
   private Short wind_degree;
-  private Character wind_dir;
+  private String wind_dir;
   private Double pressure_mb;
   private Double pressure_in;
   private Double precip_mm;
@@ -74,7 +74,7 @@ public class ExternalCurrentDTO {
     return wind_degree;
   }
 
-  public Character getWind_dir() {
+  public String getWind_dir() {
     return wind_dir;
   }
 
