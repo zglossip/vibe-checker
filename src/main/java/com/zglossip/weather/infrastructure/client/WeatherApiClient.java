@@ -10,16 +10,16 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Profile("!e2e")
 public class WeatherApiClient implements IWeatherApiClient {
 
-  private final WebClient weatherApiClient;
+  private final WebClient externalWeatherApiClient;
 
   @Autowired
-  public WeatherApiClient(WebClient weatherApiClient) {
-    this.weatherApiClient = weatherApiClient;
+  public WeatherApiClient(WebClient externalWeatherApiClient) {
+    this.externalWeatherApiClient = externalWeatherApiClient;
   }
 
   @Override
   public ExternalCurrentResponseDTO getCurrent(String query) {
-    return weatherApiClient.get()
+    return externalWeatherApiClient.get()
         .uri("/current.json/q={query}", query)
         .retrieve()
         .bodyToMono(ExternalCurrentResponseDTO.class)
