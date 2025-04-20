@@ -1,5 +1,6 @@
 package com.zglossip.weather.infrastructure.client;
 
+import com.zglossip.weather.config.ApplicationProperties;
 import com.zglossip.weather.infrastructure.dto.ExternalCurrentResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -11,16 +12,18 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WeatherApiClient implements IWeatherApiClient {
 
   private final WebClient externalWeatherApiClient;
+  private final ApplicationProperties applicationProperties;
 
   @Autowired
-  public WeatherApiClient(WebClient externalWeatherApiClient) {
+  public WeatherApiClient(WebClient externalWeatherApiClient, ApplicationProperties applicationProperties) {
     this.externalWeatherApiClient = externalWeatherApiClient;
+    this.applicationProperties = applicationProperties;
   }
 
   @Override
   public ExternalCurrentResponseDTO getCurrent(String query) {
     return externalWeatherApiClient.get()
-        .uri("/current.json/q={query}", query)
+        .uri("/current.json/q={query}&key={key}", query, applicationProperties.getApiKey())
         .retrieve()
         .bodyToMono(ExternalCurrentResponseDTO.class)
         .block();
