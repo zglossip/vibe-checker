@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
+import { FormControl, OutlinedInput, IconButton } from "@mui/material";
+import MagnifyingGlassIcon from "@mui/icons-material/Search";
 
-const Location: React.FC = () => {
-    return (
-        <div>
-            <h1>Location Component</h1>
-        </div>
-    );
+const StartAdornment = () => {
+  return (
+    <IconButton>
+      <MagnifyingGlassIcon />
+    </IconButton>
+  );
+};
+
+const Location: React.ComponentType<typeof FormControl> = () => {
+  return (
+    <FormControl>
+      <OutlinedInput endAdornment={<StartAdornment />} />
+    </FormControl>
+  );
 };
 
 export default Location;
