@@ -1,24 +1,24 @@
 package com.zglossip.weather.infrastructure.translator;
 
-import com.zglossip.weather.dto.CurrentWeatherDTO;
-import com.zglossip.weather.dto.PrecipitationDTO;
-import com.zglossip.weather.dto.enums.PrecipitationType;
-import com.zglossip.weather.dto.enums.Severity;
+import com.zglossip.weather.domain.Details;
+import com.zglossip.weather.domain.Precipitation;
+import com.zglossip.weather.domain.enums.PrecipitationType;
+import com.zglossip.weather.domain.enums.Severity;
 import com.zglossip.weather.infrastructure.dto.ExternalCurrentResponseDTO;
 
 import java.math.BigDecimal;
 
 public class CurrentWeatherTranslator {
 
-  public static CurrentWeatherDTO translate(final ExternalCurrentResponseDTO response) {
-    CurrentWeatherDTO currentWeather = new CurrentWeatherDTO();
+  public static Details translate(final ExternalCurrentResponseDTO response) {
+    Details currentWeather = new Details();
     currentWeather.setTemperature(BigDecimal.valueOf(response.getCurrent().getTemp_f()));
     currentWeather.setHumidity(response.getCurrent().getHumidity());
     currentWeather.setWind(BigDecimal.valueOf(response.getCurrent().getGust_mph()));
     currentWeather.setAirPressure(BigDecimal.valueOf(response.getCurrent().getPressure_in()));
     currentWeather.setCloud(response.getCurrent().getCloud());
 
-    PrecipitationDTO precipitation = new PrecipitationDTO();
+    Precipitation precipitation = new Precipitation();
     precipitation.setType(getType(response.getCurrent().getCondition().getCode()));
     precipitation.setThunder(hasThunder(response.getCurrent().getCondition().getCode()));
     precipitation.setSeverity(getSeverity(response.getCurrent().getCondition().getCode()));

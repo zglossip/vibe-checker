@@ -1,6 +1,6 @@
 package com.zglossip.weather.service;
 
-import com.zglossip.weather.dto.CurrentWeatherDTO;
+import com.zglossip.weather.domain.Details;
 import com.zglossip.weather.infrastructure.client.IWeatherApiClient;
 import com.zglossip.weather.infrastructure.translator.CurrentWeatherTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class CurrentWeatherService {
     this.weatherApiClient = weatherApiClient;
   }
 
-  public CurrentWeatherDTO getCurrentWeather(final String query) {
+  public Details getCurrentWeather(final String query) {
     return CurrentWeatherTranslator.translate(weatherApiClient.getCurrent(query));
   }
 }

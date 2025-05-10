@@ -1,17 +1,17 @@
-package com.zglossip.weather.dto;
+package com.zglossip.weather.domain;
 
-import com.zglossip.weather.dto.enums.PrecipitationType;
-import com.zglossip.weather.dto.enums.Severity;
+import com.zglossip.weather.domain.enums.PrecipitationType;
+import com.zglossip.weather.domain.enums.Severity;
 
 import java.util.Objects;
 
-public class PrecipitationDTO {
+public class Precipitation {
 
   private PrecipitationType type;
   private boolean thunder;
   private Severity severity;
 
-  public PrecipitationDTO() {
+  public Precipitation() {
 
   }
 
@@ -43,7 +43,7 @@ public class PrecipitationDTO {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    PrecipitationDTO that = (PrecipitationDTO) o;
+    Precipitation that = (Precipitation) o;
     return thunder == that.thunder && type == that.type && severity == that.severity;
   }
 
