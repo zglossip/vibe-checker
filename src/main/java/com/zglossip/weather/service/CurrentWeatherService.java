@@ -1,5 +1,6 @@
 package com.zglossip.weather.service;
 
+import com.zglossip.weather.domain.CurrentWeather;
 import com.zglossip.weather.domain.Details;
 import com.zglossip.weather.infrastructure.client.IWeatherApiClient;
 import com.zglossip.weather.infrastructure.translator.CurrentWeatherTranslator;
@@ -16,7 +17,9 @@ public class CurrentWeatherService {
     this.weatherApiClient = weatherApiClient;
   }
 
-  public Details getCurrentWeather(final String query) {
-    return CurrentWeatherTranslator.translate(weatherApiClient.getCurrent(query));
+  public CurrentWeather getCurrentWeather(final String query) {
+    Details details = CurrentWeatherTranslator.translate(weatherApiClient.getCurrent(query));
+
+    return new CurrentWeather(details);
   }
 }

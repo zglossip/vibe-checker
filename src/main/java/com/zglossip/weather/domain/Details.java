@@ -67,38 +67,6 @@ public class Details {
     this.cloud = cloud;
   }
 
-  public String getColor() {
-    return "#" + Integer.toHexString(Color.HSBtoRGB(getHue(), getSaturation(), getBrightness())).substring(2);
-  }
-
-  private float getHue() {
-    BigDecimal COLD = new BigDecimal("32");
-    BigDecimal HOT = new BigDecimal("100.0");
-    BigDecimal BLUE = new BigDecimal("-0.5");
-    BigDecimal RED = new BigDecimal("-1");
-
-    return convertScale(temperature, COLD, HOT, BLUE, RED).floatValue();
-  }
-
-  private float getSaturation(){
-    return (float) (100 - cloud) /100;
-  }
-
-  private float getBrightness() {
-    BigDecimal MORNING = new BigDecimal("6");
-    BigDecimal EVENING = new BigDecimal("21");
-    return convertScale(BigDecimal.valueOf(LocalDateTime.now().getHour()), MORNING, EVENING, BigDecimal.ZERO, BigDecimal.ONE).floatValue();
-  }
-
-  private static BigDecimal convertScale(BigDecimal value,
-                                         BigDecimal scaleFromMin, BigDecimal scaleFromMax,
-                                         BigDecimal scaleToMin, BigDecimal scaleToMax) {
-    BigDecimal fromRange = scaleFromMax.subtract(scaleFromMin);
-    BigDecimal toRange = scaleToMax.subtract(scaleToMin);
-    BigDecimal normalized = value.subtract(scaleFromMin).divide(fromRange, 20, RoundingMode.HALF_UP);
-    return normalized.multiply(toRange).add(scaleToMin);
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

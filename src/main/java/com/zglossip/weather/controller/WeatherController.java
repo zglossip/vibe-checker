@@ -1,5 +1,6 @@
 package com.zglossip.weather.controller;
 
+import com.zglossip.weather.domain.CurrentWeather;
 import com.zglossip.weather.domain.Details;
 import com.zglossip.weather.service.CurrentWeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class WeatherController {
   }
 
   @GetMapping(path = "/current")
-  public Details getCurrentWeather(@RequestParam String query) {
+  public CurrentWeather getCurrentWeather(@RequestParam String query) {
     return currentWeatherService.getCurrentWeather(query);
   }
 
