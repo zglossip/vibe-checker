@@ -1,9 +1,6 @@
 package com.zglossip.weather.domain;
 
-import java.awt.*;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Details {

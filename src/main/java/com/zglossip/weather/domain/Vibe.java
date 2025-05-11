@@ -9,11 +9,15 @@ public class Vibe {
     private final String color;
 
     public Vibe(Details details) {
-        this.color = "#" + Integer.toHexString(Color.HSBtoRGB(getHue(details.getTemperature()), getSaturation(details.getCloud()), getBrightness())).substring(2);
+        this.color = generateColor(details.getTemperature(), details.getCloud());
     }
 
     public String getColor() {
         return this.color;
+    }
+
+    private String generateColor(BigDecimal temperature, Short cloud) {
+        return "#" + Integer.toHexString(Color.HSBtoRGB(getHue(temperature), getSaturation(cloud), getBrightness())).substring(2);
     }
 
     private float getHue(BigDecimal temperature) {
