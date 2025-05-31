@@ -12,6 +12,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 import { CurrentWeatherContextProvider } from "./app-context/current-weather-context-provider";
+import { AppProvider } from "@toolpad/core/AppProvider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -46,10 +47,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <CurrentWeatherContextProvider>
-      <Outlet />
-    </CurrentWeatherContextProvider>
-);
+    <AppProvider>
+      <CurrentWeatherContextProvider>
+        <Outlet />
+      </CurrentWeatherContextProvider>
+    </AppProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
