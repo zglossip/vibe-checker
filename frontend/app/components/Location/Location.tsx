@@ -1,7 +1,7 @@
 import React from "react";
 import { FormControl, OutlinedInput, IconButton } from "@mui/material";
 import MagnifyingGlassIcon from "@mui/icons-material/Search";
-import { useLocationService } from "./locationService";
+import { useLocationService } from "#components/Location/locationService";
 
 const Location: React.FC = () => {
   const { handleClick, handleInput } = useLocationService();

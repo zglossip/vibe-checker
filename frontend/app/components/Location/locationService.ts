@@ -2,7 +2,12 @@ import { useContext, useState } from "react";
 import { useWeatherApi } from "~/api/weatherApi";
 import { CurrentWeatherContext } from "~/app-context/current-weather-context";
 
-export const useLocationService = () => {
+export interface LocationService {
+  handleClick: () => Promise<void>;
+  handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const useLocationService = (): LocationService => {
   const { fetchCurrentWeather } = useWeatherApi();
   const { updateState } = useContext(CurrentWeatherContext);
 
@@ -13,7 +18,7 @@ export const useLocationService = () => {
     updateState({ currentWeather });
   };
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void =>
     setQuery(e.target.value);
 
   return { handleClick, handleInput };

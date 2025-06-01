@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import { AppProvider } from "@toolpad/core";
 import { CurrentWeatherContextProvider } from "../app/app-context/current-weather-context-provider";
 
