@@ -6,6 +6,10 @@
       "storybook": "./app/components/Location/locationService.mock.ts",
       "default": "./app/components/Location/locationService.ts"
     },
+    "#components/DetailsDrawer/detailsDrawerService": {
+      "storybook": "./app/components/DetailsDrawer/detailsDrawerService.mock.ts",
+      "default": "./app/components/DetailsDrawer/detailsDrawerService.ts"
+    },
     "#*": [
       "./app/*",
       "./app/*.ts",

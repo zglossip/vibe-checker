@@ -1,6 +1,9 @@
 import { useContext, useState } from "react";
 import { useWeatherApi } from "~/api/weatherApi";
-import { CurrentWeatherContext } from "~/app-context/current-weather-context";
+import {
+  CurrentWeatherContext,
+  type CurrentWeather,
+} from "~/app-context/current-weather-context";
 
 export interface LocationService {
   handleClick: () => Promise<void>;
@@ -14,7 +17,7 @@ export const useLocationService = (): LocationService => {
   const [query, setQuery] = useState("");
 
   const handleClick = async (): Promise<void> => {
-    const currentWeather = await fetchCurrentWeather(query);
+    const currentWeather: CurrentWeather = await fetchCurrentWeather(query);
     updateState({ currentWeather });
   };
 

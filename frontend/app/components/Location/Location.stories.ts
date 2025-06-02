@@ -13,7 +13,10 @@ type Story = StoryObj<typeof Location>;
 
 export const Default: Story = {
   async beforeEach() {
-    useLocationService.mockReturnValue({handleClick: async () => action('click')(), handleInput: e => action('input')(e.target.value)});
+    useLocationService.mockReturnValue({
+      handleClick: async () => action("click")(),
+      handleInput: (e) => action("input")(e.target.value),
+    });
   },
   args: {},
 };
