@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  blankCurrentWeather,
   CurrentWeatherContext,
   type AppState,
 } from "./current-weather-context";
@@ -11,7 +12,9 @@ interface Props {
 export const CurrentWeatherContextProvider: React.FC<Props> = ({
   children,
 }) => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    currentWeather: blankCurrentWeather
+  });
 
   const updateState = (newState: Partial<AppState>) => {
     setState({ ...state, ...newState });
