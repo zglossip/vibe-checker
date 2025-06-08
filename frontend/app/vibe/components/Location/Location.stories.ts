@@ -1,4 +1,4 @@
-import { useLocationService } from "#components/Location/locationService.mock";
+import { useLocationService } from "#vibe/components/Location/locationService.mock.js";
 import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "storybook/actions";
 

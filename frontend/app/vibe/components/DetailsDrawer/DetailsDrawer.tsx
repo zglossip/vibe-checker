@@ -2,7 +2,7 @@ import React, { Fragment, useMemo, useState, type ReactElement } from "react";
 import {
   useDetailsDrawerService,
   type DetailsDrawerService,
-} from "#components/DetailsDrawer/detailsDrawerService";
+} from "#vibe/components/DetailsDrawer/detailsDrawerService";
 import {
   Drawer,
   Fab,

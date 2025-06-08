@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box } from "@mui/material";
-import { useVibeContainerService } from "#components/VibeContainer/vibeContainerService";
+import { useVibeContainerService } from "#vibe/components/VibeContainer/vibeContainerService";
 import styles from "./VibeContainer.module.css";
 
 const VibeContainer: React.FC = () => {

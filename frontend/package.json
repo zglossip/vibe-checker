@@ -2,17 +2,17 @@
   "name": "vibe-checker",
   "private": true,
   "imports": {
-    "#components/Location/locationService": {
-      "storybook": "./app/components/Location/locationService.mock.ts",
-      "default": "./app/components/Location/locationService.ts"
+    "#vibe/components/Location/locationService": {
+      "storybook": "./app/vibe/components/Location/locationService.mock.ts",
+      "default": "./app/vibe/components/Location/locationService.ts"
     },
-    "#components/DetailsDrawer/detailsDrawerService": {
-      "storybook": "./app/components/DetailsDrawer/detailsDrawerService.mock.ts",
-      "default": "./app/components/DetailsDrawer/detailsDrawerService.ts"
+    "#vibe/components/DetailsDrawer/detailsDrawerService": {
+      "storybook": "./app/vibe/components/DetailsDrawer/detailsDrawerService.mock.ts",
+      "default": "./app/vibe/components/DetailsDrawer/detailsDrawerService.ts"
     },
-    "#components/VibeContainer/vibeContainerService": {
-      "storybook": "./app/components/VibeContainer/vibeContainerService.mock.ts",
-      "default": "./app/components/VibeContainer/vibeContainerService.ts"
+    "#vibe/components/VibeContainer/vibeContainerService": {
+      "storybook": "./app/vibe/components/VibeContainer/vibeContainerService.mock.ts",
+      "default": "./app/vibe/components/VibeContainer/vibeContainerService.ts"
     },
     "#*": [
       "./app/*",
