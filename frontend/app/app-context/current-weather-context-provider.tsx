@@ -13,7 +13,7 @@ export const CurrentWeatherContextProvider: React.FC<Props> = ({
   children,
 }) => {
   const [state, setState] = useState({
-    currentWeather: blankCurrentWeather
+    currentWeather: blankCurrentWeather,
   });
 
   const updateState = (newState: Partial<AppState>) => {

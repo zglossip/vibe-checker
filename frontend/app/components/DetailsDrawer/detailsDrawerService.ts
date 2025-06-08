@@ -12,8 +12,8 @@ export interface DetailsDrawerService {
 export const useDetailsDrawerService = (): DetailsDrawerService => {
   const [details, setDetails] = useState<Details>(blankDetails);
 
-  const {currentWeather} = useContext(CurrentWeatherContext)
-  setDetails(currentWeather.details)
+  const { currentWeather } = useContext(CurrentWeatherContext);
+  setDetails(currentWeather.details);
 
   return { details };
 };

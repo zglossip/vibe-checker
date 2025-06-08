@@ -10,6 +10,10 @@
       "storybook": "./app/components/DetailsDrawer/detailsDrawerService.mock.ts",
       "default": "./app/components/DetailsDrawer/detailsDrawerService.ts"
     },
+    "#components/VibeContainer/vibeContainerService": {
+      "storybook": "./app/components/VibeContainer/vibeContainerService.mock.ts",
+      "default": "./app/components/VibeContainer/vibeContainerService.ts"
+    },
     "#*": [
       "./app/*",
       "./app/*.ts",
