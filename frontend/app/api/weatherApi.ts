@@ -1,4 +1,4 @@
-import type { CurrentWeather } from "~/app-context/current-weather-context";
+import type { CurrentWeather } from "#app-context/current-weather-context";
 import { useNotifications } from "@toolpad/core";
 
 export const useWeatherApi = () => {

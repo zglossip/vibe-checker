@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { useWeatherApi } from "~/api/weatherApi";
+import { useWeatherApi } from "#api/weatherApi";
 import {
   CurrentWeatherContext,
   type CurrentWeather,
-} from "~/app-context/current-weather-context";
+} from "#app-context/current-weather-context";
 
 export interface LocationService {
   handleClick: () => Promise<void>;

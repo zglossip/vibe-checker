@@ -1,15 +1,15 @@
 import React from "react";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Vibe } from "../vibe/vibe";
 
 // eslint-disable-next-line no-empty-pattern
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Vibe Checker" },
+    { name: "description", content: "Check out the vibe for a location!" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <Vibe />;
 }
