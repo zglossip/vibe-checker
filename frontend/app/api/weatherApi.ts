@@ -5,7 +5,9 @@ export const useWeatherApi = () => {
   const notification = useNotifications();
 
   async function get<Type>(url: string): Promise<Type> {
-    return fetch(url, {
+    const baseUrl = import.meta.env.VITE_VIBE_CHECKER_BACKEND_URL;
+
+    return fetch(baseUrl + url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +32,7 @@ export const useWeatherApi = () => {
 
   const fetchCurrentWeather = async (query: string): Promise<CurrentWeather> =>
     get<CurrentWeather>(
-      `/vibe-checker/weather/current?query=${encodeURIComponent(query)}`,
+      `/weather/current?query=${encodeURIComponent(query)}`,
     );
 
   return { fetchCurrentWeather };
