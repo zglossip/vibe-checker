@@ -70,7 +70,7 @@ public class Vibe {
     }
 
     private String generateColor(BigDecimal temperature, Short cloud) {
-        return "#" + Integer.toHexString(Color.HSBtoRGB(getHue(temperature), getSaturation(cloud), getBrightness())).substring(2);
+        return Integer.toHexString(Color.HSBtoRGB(getHue(temperature), getSaturation(cloud), getBrightness())).substring(2);
     }
 
     private String generateColor2(PrecipitationType precipitationType) {

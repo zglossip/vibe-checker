@@ -6,9 +6,10 @@ import DetailsDrawer from "./components/DetailsDrawer/DetailsDrawer";
 export function Vibe() {
   return (
     <main className="px-5 flex items-right">
-      <Location />
-      <VibeContainer />
-      <DetailsDrawer />
+      <VibeContainer>
+        <Location />
+        <DetailsDrawer />
+      </VibeContainer>
     </main>
   );
 }

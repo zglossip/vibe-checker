@@ -1,13 +1,16 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 
-import { Box } from "@mui/material";
 import { useVibeContainerService } from "#vibe/components/VibeContainer/vibeContainerService";
 import styles from "./VibeContainer.module.css";
 
-const VibeContainer: React.FC = () => {
+interface VibeContainerProps {
+  children?: ReactNode;
+}
+
+const VibeContainer: React.FC<VibeContainerProps> = ({ children }) => {
   const { vibe } = useVibeContainerService();
   return (
-    <Box
+    <div
       style={
         {
           "--primary-color": "#" + vibe.color,
@@ -16,8 +19,11 @@ const VibeContainer: React.FC = () => {
       }
       className={styles["vibe-container"]}
     >
-      <p className={styles["vibe-container-text"]}>{vibe.text}</p>
-    </Box>
+      <div className={styles["vibe-container-text-wrapper"]}>
+        <div className={styles["vibe-container-text"]}>{vibe.text}</div>
+        {children}
+      </div>
+    </div>
   );
 };
 

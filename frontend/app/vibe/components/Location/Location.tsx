@@ -16,7 +16,7 @@ const Location: React.FC = () => {
 
   return (
     <FormControl>
-      <OutlinedInput endAdornment={<StartAdornment />} onInput={handleInput} />
+      <OutlinedInput endAdornment={<StartAdornment />} onChange={handleInput} />
     </FormControl>
   );
 };

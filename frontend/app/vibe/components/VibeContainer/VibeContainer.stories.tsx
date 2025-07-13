@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import VibeContainer from "./VibeContainer";
 import { useVibeContainerService } from "./vibeContainerService.mock";
 import { type Vibe } from "#app-context/current-weather-context.js";
@@ -25,4 +26,13 @@ export const Default: Story = {
     color: "f033ff",
     color2: "33fff6",
   },
+};
+
+export const WithChildren: Story = {
+  args: Default.args,
+  render: () => (
+    <VibeContainer>
+      <span>Here are some children!</span>
+    </VibeContainer>
+  ),
 };

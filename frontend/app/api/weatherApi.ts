@@ -31,9 +31,7 @@ export const useWeatherApi = () => {
   }
 
   const fetchCurrentWeather = async (query: string): Promise<CurrentWeather> =>
-    get<CurrentWeather>(
-      `/weather/current?query=${encodeURIComponent(query)}`,
-    );
+    get<CurrentWeather>(`/weather/current?query=${encodeURIComponent(query)}`);
 
   return { fetchCurrentWeather };
 };
