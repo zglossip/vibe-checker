@@ -18,7 +18,7 @@ const VibeContainer: React.FC<VibeContainerProps> = ({ children }) => {
     <div style={styleProperties} className={styles["vibe-container"]}>
       <div style={styleProperties} className={styles["vibe-background"]} />
       <div className={styles["vibe-text"]}>{vibe.text}</div>
-      {children}
+      <div className={styles["vibe-children"]}>{children}</div>
     </div>
   );
 };
