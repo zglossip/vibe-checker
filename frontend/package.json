@@ -30,7 +30,8 @@
     "build-storybook": "storybook build",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "chromatic": "npx chromatic --project-token=chpt_d985e99ead9ab71"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -58,6 +59,7 @@
     "@types/react-dom": "^19.0.1",
     "@vitest/browser": "^3.1.2",
     "@vitest/coverage-v8": "^3.1.2",
+    "chromatic": "^13.1.2",
     "eslint": "^9.26.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-storybook": "^9.0.3",

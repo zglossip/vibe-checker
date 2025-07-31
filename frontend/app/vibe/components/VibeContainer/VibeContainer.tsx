@@ -9,20 +9,16 @@ interface VibeContainerProps {
 
 const VibeContainer: React.FC<VibeContainerProps> = ({ children }) => {
   const { vibe } = useVibeContainerService();
+
+  const styleProperties = {
+    "--primary-color": vibe.color,
+    "--secondary-color": vibe.color2,
+  } as React.CSSProperties;
   return (
-    <div
-      style={
-        {
-          "--primary-color": "#" + vibe.color,
-          "--secondary-color": "#" + vibe.color2,
-        } as React.CSSProperties
-      }
-      className={styles["vibe-container"]}
-    >
-      <div className={styles["vibe-container-text-wrapper"]}>
-        <div className={styles["vibe-container-text"]}>{vibe.text}</div>
-        {children}
-      </div>
+    <div style={styleProperties} className={styles["vibe-container"]}>
+      <div style={styleProperties} className={styles["vibe-background"]} />
+      <div className={styles["vibe-text"]}>{vibe.text}</div>
+      {children}
     </div>
   );
 };

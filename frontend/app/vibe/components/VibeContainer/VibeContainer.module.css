@@ -1,24 +1,26 @@
-.vibe-container {
+@keyframes vibe-slide {
+  0%,
+  100% {
+    transform: translate(-50vw, 0);
+  }
+  50% {
+    transform: translate(50vw, 0);
+  }
+}
+
+.vibe-background {
   background: linear-gradient(
-    to bottom right,
+    to right,
     var(--primary-color),
-    var(--secondary-color)
+    var(--secondary-color),
+    var(--primary-color)
   );
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  padding: 50px;
-}
-
-.vibe-container-text-wrapper {
+  width: 100%;
   height: 100%;
-  position: relative;
+  animation: vibe-slide 10s infinite;
 }
 
-.vibe-container-text {
+.vibe-text {
   color: white;
   font-weight: bolder;
   font-size: 2.25rem;
@@ -28,4 +30,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.vibe-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  margin: 0;
 }

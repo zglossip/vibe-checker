@@ -30,6 +30,7 @@ public class Vibe {
     private static final String RAIN_HEX = "#237fe8";
     private static final String SNOW_HEX = "#ebf3fc";
     private static final String FOG_MIXED_HEX = "#92ebfc";
+    private static final String SUNNY = "#fcc603";
 
     private static final String MUGGY = "Muggy";
 
@@ -70,7 +71,7 @@ public class Vibe {
     }
 
     private String generateColor(BigDecimal temperature, Short cloud) {
-        return Integer.toHexString(Color.HSBtoRGB(getHue(temperature), getSaturation(cloud), getBrightness())).substring(2);
+        return "#" + Integer.toHexString(Color.HSBtoRGB(getHue(temperature), getSaturation(cloud), getBrightness())).substring(2);
     }
 
     private String generateColor2(PrecipitationType precipitationType) {
@@ -83,7 +84,7 @@ public class Vibe {
             case FOG:
                 return FOG_MIXED_HEX;
             default:
-                return this.color;
+                return SUNNY;
         }
     }
 

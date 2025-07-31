@@ -22,9 +22,14 @@ type Story = StoryObj<typeof VibeContainer>;
 
 export const Default: Story = {
   args: {
-    text: "This is a test vibe descriptor\nI'm making sure to include a line break in here.",
-    color: "f033ff",
-    color2: "33fff6",
+    text: (
+      <div>
+        <p>This is a test vibe descriptor</p>
+        <p>I&apos;m making sure to include a line break in here.</p>
+      </div>
+    ),
+    color: "#f033ff",
+    color2: "#33fff6",
   },
 };
 
