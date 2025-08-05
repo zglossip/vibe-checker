@@ -20,8 +20,8 @@ export const Default: Story = {
   args: {
     vibe: {
       text: "This is a test vibe descriptor",
-      color: "f033ff",
-      color2: "33fff6",
+      color: "#f033ff",
+      color2: "#33fff6",
     },
   },
 };

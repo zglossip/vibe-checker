@@ -33,6 +33,7 @@ import {
   PRECIP_TYPE_SNOW,
   type Precipitation,
 } from "#app-context/current-weather-context.js";
+import styles from "./detailsDrawer.module.css";
 
 const DetailsDrawer: React.FC = () => {
   const { details }: DetailsDrawerService = useDetailsDrawerService();
@@ -114,7 +115,10 @@ const DetailsDrawer: React.FC = () => {
 
   return (
     <Fragment>
-      <Fab onClick={() => setDrawerOpen(true)}>
+      <Fab
+        onClick={() => setDrawerOpen(true)}
+        className={styles["details-fab"]}
+      >
         <WbSunny />
       </Fab>
       <Drawer
